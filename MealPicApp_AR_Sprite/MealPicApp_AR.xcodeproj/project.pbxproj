@@ -18,6 +18,11 @@
 		07274D781F789A6B0092543A /* MealPicApp_ARUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07274D771F789A6B0092543A /* MealPicApp_ARUITests.swift */; };
 		07274D861F79120E0092543A /* packagedFood.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 07274D851F7911EB0092543A /* packagedFood.mlmodel */; };
 		07274D881F7918B00092543A /* ARBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07274D871F7918B00092543A /* ARBridge.swift */; };
+		07345D0D1F7ABBDD0017CEC8 /* CustomMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07345D0B1F7AB5AD0017CEC8 /* CustomMessageCell.swift */; };
+		07345D0E1F7ABBE30017CEC8 /* MessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07345D0C1F7AB5AD0017CEC8 /* MessageCell.xib */; };
+		07345D111F7ABD9D0017CEC8 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07345D101F7ABD9D0017CEC8 /* Message.swift */; };
+		07345D141F7AC3D40017CEC8 /* ReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07345D121F7AC3D40017CEC8 /* ReviewCell.swift */; };
+		07345D151F7AC3D40017CEC8 /* ReviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07345D131F7AC3D40017CEC8 /* ReviewCell.xib */; };
 		07BF08B61F7A66EE00C5E486 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BF08B51F7A66EE00C5E486 /* HomeViewController.swift */; };
 		07BF08B81F7A690400C5E486 /* ScanItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BF08B71F7A690400C5E486 /* ScanItemViewController.swift */; };
 		07BF08C41F7A761500C5E486 /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BF08C31F7A761500C5E486 /* RecipeViewController.swift */; };
@@ -60,6 +65,11 @@
 		07274D791F789A6B0092543A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07274D851F7911EB0092543A /* packagedFood.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = packagedFood.mlmodel; sourceTree = "<group>"; };
 		07274D871F7918B00092543A /* ARBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARBridge.swift; sourceTree = "<group>"; };
+		07345D0B1F7AB5AD0017CEC8 /* CustomMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMessageCell.swift; sourceTree = "<group>"; };
+		07345D0C1F7AB5AD0017CEC8 /* MessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageCell.xib; sourceTree = "<group>"; };
+		07345D101F7ABD9D0017CEC8 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		07345D121F7AC3D40017CEC8 /* ReviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCell.swift; sourceTree = "<group>"; };
+		07345D131F7AC3D40017CEC8 /* ReviewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewCell.xib; sourceTree = "<group>"; };
 		07BF08B51F7A66EE00C5E486 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		07BF08B71F7A690400C5E486 /* ScanItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanItemViewController.swift; sourceTree = "<group>"; };
 		07BF08C31F7A761500C5E486 /* RecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
@@ -115,21 +125,16 @@
 		07274D521F789A6B0092543A /* MealPicApp_AR */ = {
 			isa = PBXGroup;
 			children = (
-				07274D531F789A6B0092543A /* AppDelegate.swift */,
+				07345D091F7AB5550017CEC8 /* Model */,
+				07345D081F7AB52C0017CEC8 /* Controller */,
+				07345D071F7AB5120017CEC8 /* View */,
 				07274D551F789A6B0092543A /* Scene.sks */,
 				07274D571F789A6B0092543A /* Scene.swift */,
 				07274D871F7918B00092543A /* ARBridge.swift */,
 				07274D591F789A6B0092543A /* ViewController.swift */,
-				07274D5B1F789A6B0092543A /* Main.storyboard */,
-				07BF08B71F7A690400C5E486 /* ScanItemViewController.swift */,
-				07BF08B51F7A66EE00C5E486 /* HomeViewController.swift */,
 				07274D5E1F789A6B0092543A /* Assets.xcassets */,
-				07274D601F789A6B0092543A /* LaunchScreen.storyboard */,
 				07274D631F789A6B0092543A /* Info.plist */,
 				07274D851F7911EB0092543A /* packagedFood.mlmodel */,
-				07BF08C31F7A761500C5E486 /* RecipeViewController.swift */,
-				07BF08C51F7A763800C5E486 /* ItemInfoViewController.swift */,
-				07BF08C71F7A766300C5E486 /* UserReviewsViewController.swift */,
 			);
 			path = MealPicApp_AR;
 			sourceTree = "<group>";
@@ -150,6 +155,48 @@
 				07274D791F789A6B0092543A /* Info.plist */,
 			);
 			path = MealPicApp_ARUITests;
+			sourceTree = "<group>";
+		};
+		07345D071F7AB5120017CEC8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				07345D0A1F7AB5980017CEC8 /* Custom Cell */,
+				07274D5B1F789A6B0092543A /* Main.storyboard */,
+				07274D601F789A6B0092543A /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		07345D081F7AB52C0017CEC8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				07BF08B71F7A690400C5E486 /* ScanItemViewController.swift */,
+				07BF08B51F7A66EE00C5E486 /* HomeViewController.swift */,
+				07BF08C31F7A761500C5E486 /* RecipeViewController.swift */,
+				07BF08C51F7A763800C5E486 /* ItemInfoViewController.swift */,
+				07BF08C71F7A766300C5E486 /* UserReviewsViewController.swift */,
+				07274D531F789A6B0092543A /* AppDelegate.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		07345D091F7AB5550017CEC8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				07345D101F7ABD9D0017CEC8 /* Message.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		07345D0A1F7AB5980017CEC8 /* Custom Cell */ = {
+			isa = PBXGroup;
+			children = (
+				07345D0B1F7AB5AD0017CEC8 /* CustomMessageCell.swift */,
+				07345D0C1F7AB5AD0017CEC8 /* MessageCell.xib */,
+				07345D121F7AC3D40017CEC8 /* ReviewCell.swift */,
+				07345D131F7AC3D40017CEC8 /* ReviewCell.xib */,
+			);
+			path = "Custom Cell";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,10 +306,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07345D0E1F7ABBE30017CEC8 /* MessageCell.xib in Resources */,
 				07274D561F789A6B0092543A /* Scene.sks in Resources */,
 				07274D621F789A6B0092543A /* LaunchScreen.storyboard in Resources */,
 				07274D5F1F789A6B0092543A /* Assets.xcassets in Resources */,
 				07274D5D1F789A6B0092543A /* Main.storyboard in Resources */,
+				07345D151F7AC3D40017CEC8 /* ReviewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,6 +337,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				07274D861F79120E0092543A /* packagedFood.mlmodel in Sources */,
+				07345D0D1F7ABBDD0017CEC8 /* CustomMessageCell.swift in Sources */,
 				07BF08C61F7A763800C5E486 /* ItemInfoViewController.swift in Sources */,
 				07274D5A1F789A6B0092543A /* ViewController.swift in Sources */,
 				07BF08C41F7A761500C5E486 /* RecipeViewController.swift in Sources */,
@@ -295,6 +345,8 @@
 				07274D581F789A6B0092543A /* Scene.swift in Sources */,
 				07274D541F789A6B0092543A /* AppDelegate.swift in Sources */,
 				07BF08B81F7A690400C5E486 /* ScanItemViewController.swift in Sources */,
+				07345D111F7ABD9D0017CEC8 /* Message.swift in Sources */,
+				07345D141F7AC3D40017CEC8 /* ReviewCell.swift in Sources */,
 				07BF08B61F7A66EE00C5E486 /* HomeViewController.swift in Sources */,
 				07BF08C81F7A766300C5E486 /* UserReviewsViewController.swift in Sources */,
 			);
