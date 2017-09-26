@@ -31,6 +31,8 @@ class ScanItemViewController: UIViewController, ARSKViewDelegate {
         //        }
         let scene = Scene(size: sceneView.bounds.size)
         scene.scaleMode = .resizeFill
+        
+        scene.viewController = self
         sceneView.presentScene(scene)
         
     }
@@ -64,14 +66,12 @@ class ScanItemViewController: UIViewController, ARSKViewDelegate {
     func view(_ view: ARSKView, nodeFor anchor: ARAnchor) -> SKNode? {
         
         
-        //        // Create and configure a node for the anchor added to the view's session.
-        //        let labelNode = SKLabelNode(text: "👾 ")
-        //        labelNode.horizontalAlignmentMode = .center
-        //        labelNode.verticalAlignmentMode = .center
-        //        return labelNode;
+        
+        //        let parentNode = SKNode()
+        //        parentNode.position =  SCNVector3(hitResult.worldTransform.columns.3.x, hitResult.worldTransform.columns.3.y, hitResult.worldTransform.columns.3.z)
+        //            .horizontalAlignmentMode = .center
+        //        parentNode.verticalAlignmentMode = .center
         //
-        
-        
         
         let goodSigh = " 👍"
         let questionSign = " 🤔"
@@ -81,16 +81,52 @@ class ScanItemViewController: UIViewController, ARSKViewDelegate {
             return nil
         }
         
+        let parentNode = SKLabelNode(text: "")
+        parentNode.horizontalAlignmentMode = .center
+        parentNode.verticalAlignmentMode = .top
+        parentNode.name = "selectedItem"
+        
+        
+        let parentPosition = parentNode.position
+        
+        
         let labelNode = SKLabelNode(text: identifier + goodSigh)
-        labelNode.horizontalAlignmentMode = .center
-        labelNode.verticalAlignmentMode = .center
-        labelNode.fontName = UIFont.boldSystemFont(ofSize: 12).fontName
-        labelNode.name = "itemName"
-        return labelNode
+        labelNode.position.x =  parentPosition.x
+        labelNode.position.y = parentPosition.y + 150
+        labelNode.fontName = UIFont.boldSystemFont(ofSize: 3).fontName
+        labelNode.name = "itemNameLabel"
+        
+
+        let benefitLabelNode = SKSpriteNode(imageNamed: "BenefitLogo")
+        benefitLabelNode.position.x =  parentPosition.x + 50
+        benefitLabelNode.position.y =  parentPosition.y + 30
+        //benefitLabelNode.setScale(1.5)
+        benefitLabelNode.name = "benefitLabel"
+        
+        let recipeLabelNode = SKSpriteNode(imageNamed: "AlternativeLogo")
+        recipeLabelNode.position.x =  parentPosition.x - 80
+        recipeLabelNode.position.y =  parentPosition.y + 50
+        //recipeLabelNode.setScale(1.5)
+        recipeLabelNode.name = "recipeLabel"
+        
+        let reviewLabelNode = SKSpriteNode(imageNamed: "ReviewLogo")
+        reviewLabelNode.position.x =  parentPosition.x + 50
+        reviewLabelNode.position.y =  parentPosition.y - 100
+        //reviewLabelNode.setScale(1.5)
+        reviewLabelNode.name = "reviewLabel"
+   
+        
+        parentNode.addChild(labelNode)
+        parentNode.addChild(benefitLabelNode)
+        parentNode.addChild(recipeLabelNode)
+        parentNode.addChild(reviewLabelNode)
+        return parentNode
         
         
         
     }
+    
+    
     
     func session(_ session: ARSession, didFailWithError error: Error) {
         // Present an error message to the user

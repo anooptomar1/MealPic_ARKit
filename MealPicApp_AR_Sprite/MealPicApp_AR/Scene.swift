@@ -12,6 +12,7 @@ import Vision
 
 class Scene: SKScene {
     
+    var viewController: ScanItemViewController?
     
     var isDetected = false
 
@@ -52,7 +53,9 @@ class Scene: SKScene {
         
         
         if let node = hit.first {
-            if node.name == "itemName" {
+            if node.name == "itemNameLabel" {
+                
+                let parentNode = node.parent
                 
                 let fadeOut = SKAction.fadeOut(withDuration: 0.2)
                 let remove = SKAction.removeFromParent()
@@ -63,7 +66,27 @@ class Scene: SKScene {
                 let sequenceAction = SKAction.sequence([groupDismissingActions, remove])
                 
                 // Excecute the actions
-                node.run(sequenceAction)
+                parentNode!.run(sequenceAction)
+                
+            }
+            else if node.name == "benefitLabel" {
+                
+                guard let vc = UIStoryboard(name:"Main", bundle:nil).instantiateViewController(withIdentifier: "ItemInfoViewController") as? ItemInfoViewController else {
+                    print("Could not instantiate view controller with identifier of type SecondViewController")
+                    return
+                }
+                
+               self.viewController?.performSegue(withIdentifier: "goToItemInfoViewController", sender: vc)
+                
+            }
+            else if node.name == "recipeLabel" {
+                
+                
+                
+            }
+            else if node.name == "reviewLabel" {
+                
+                
                 
             }
             
@@ -117,9 +140,9 @@ class Scene: SKScene {
                     print(error)
                 }
                 
-                // Create a transform with a translation of 1.2 meters in front of the camera
+                // Create a transform with a translation of 1.5 meters in front of the camera
                 var translation = matrix_identity_float4x4
-                translation.columns.3.z = -1.2 // Originally this was -1.5
+                translation.columns.3.z = -1.5 // Originally this was -1.5
                 let transform = simd_mul(currentFrame.camera.transform, translation)
                 
                 // Add a new anchor to the session

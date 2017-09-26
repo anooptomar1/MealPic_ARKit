@@ -12,7 +12,7 @@
         <!--Item Info View Controller-->
         <scene sceneID="qZP-LK-FPk">
             <objects>
-                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="uFX-wI-0b6" customClass="ItemInfoViewController" customModule="MealPicApp_AR" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ItemInfoViewController" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="uFX-wI-0b6" customClass="ItemInfoViewController" customModule="MealPicApp_AR" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="x2n-aM-uFC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -135,7 +135,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="isw-Ke-9SU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1504.8" y="-869.41529235382313"/>
+            <point key="canvasLocation" x="1737" y="-781"/>
         </scene>
         <!--User Reviews View Controller-->
         <scene sceneID="Mnj-jg-rRp">
@@ -192,7 +192,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="GoTO"/>
                                 <connections>
-                                    <segue destination="uFX-wI-0b6" kind="presentation" id="xE9-Kn-GoS"/>
+                                    <segue destination="uFX-wI-0b6" kind="presentation" identifier="ItemInfoViewController" id="xE9-Kn-GoS"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -204,6 +204,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="sceneView" destination="fWk-Mh-zs6" id="HYC-0I-pgJ"/>
+                        <segue destination="uFX-wI-0b6" kind="presentation" identifier="goToItemInfoViewController" id="o6Q-IK-uMh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fY3-U4-EiY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -267,4 +268,7 @@
         <image name="bonesLogo" width="21" height="21"/>
         <image name="muscleLogo" width="21" height="21"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="o6Q-IK-uMh"/>
+    </inferredMetricsTieBreakers>
 </document>
